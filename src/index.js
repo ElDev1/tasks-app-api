@@ -1,8 +1,7 @@
-import express from 'express'
+import app from './app'
+import './database' 
 
-const app = express()
- 
 const PORT = 3000 
 app.listen(PORT)
 
-console.log(`listen on port ${PORT}`)
+console.log(`server listen on port ${PORT}`)
