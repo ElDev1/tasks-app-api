@@ -28,5 +28,7 @@ export const updateTaskById = async (req, res) => {
 }
 
 export const deleteTaskById = async (req, res) => {
-
+    const { taskId } = req.params
+    await Task.findByIdAndDelete(taskId)
+    res.status(204).json()
 }
