@@ -23,5 +23,18 @@ export const signUp = async (req, res) => {
 } 
 
 export const signIn = async (req, res) => {
-    res.json('signup')
+    
+    const userFound = await User.findOne({email: req.body.email})
+
+    if(!userFound) return res.status(400).json({message: 'user not found'})
+    
+    const matchPassword = await User.comparePassword(req.body.password, userFound.password)
+
+    if(!matchPassword) return res.status(400).json({token: null, message: 'invalid password'})
+
+    const token = jwt.sign({id: userFound._id}, config.SECRET, {
+        expiresIn: 86400
+    })
+
+    res.json({token})
 }
