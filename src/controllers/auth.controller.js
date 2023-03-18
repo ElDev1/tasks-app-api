@@ -5,8 +5,6 @@ import config from '../config'
 export const signUp = async (req, res) => {
     const { username, email, password } = req.body
 
-    //const userFound = User.find({email})
-
     const newUser = new User({
         username,
         email,

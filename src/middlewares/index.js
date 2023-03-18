@@ -1,3 +1,4 @@
 import { verifyToken } from "./authJwt"
+import { checkDuplicateUserNameOrEmail } from "./verifySignup"
 
-export { verifyToken }
+export { verifyToken, checkDuplicateUserNameOrEmail }
