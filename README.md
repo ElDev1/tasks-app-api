@@ -2,7 +2,7 @@
 
 Api built with node and express to create tasks and manage user authentication.
 
-## enpoints
+## Enpoints
 - ``` GET /api/tasks```
 - ``` GET /api/tasks/:taskId```
 - ``` POST /api/tasks```
