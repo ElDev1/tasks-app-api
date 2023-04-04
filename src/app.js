@@ -1,6 +1,7 @@
 import express from 'express'
 import morgan from 'morgan'
 import pkg from '../package.json'
+import cors from 'cors'
 
 import tasksRoutes from './routes/tasks.routes'
 import authRoutes from './routes/auth.routes'
@@ -11,7 +12,8 @@ app.set('pkg', pkg)
 
 app.use(express.json())
 app.use(morgan('dev'))
- 
+app.use(cors())
+
 app.get('/', (req, res) => {
     res.json({
         name: app.get('pkg').name,

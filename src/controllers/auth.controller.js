@@ -17,6 +17,7 @@ export const signUp = async (req, res) => {
         expiresIn: 86400
     })
 
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json({token})
 } 
 
@@ -34,5 +35,6 @@ export const signIn = async (req, res) => {
         expiresIn: 86400
     })
 
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.json({token})
 }
